@@ -287,7 +287,7 @@ Deepak Kumar Patro
 B.Tech Computing & Data Science  
 Sai University
 
-GitHub: https://github.com/yourusername
+GitHub: https://github.com/Deepak392
 
 ---
 
