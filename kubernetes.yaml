@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: thyroid-app
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: thyroid
+
+  template:
+    metadata:
+      labels:
+        app: thyroid
+
+    spec:
+      containers:
+      - name: thyroid
+        image: deepakpatro101/thyroidml:v1
+        ports:
+        - containerPort: 5000
+
+---
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: thyroid-service
+
+spec:
+  type: LoadBalancer
+
+  selector:
+    app: thyroid
+
+  ports:
+  - port: 5000
+    targetPort: 5000
